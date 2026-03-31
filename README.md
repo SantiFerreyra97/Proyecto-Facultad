@@ -3,7 +3,7 @@
 Proyecto e-commerce desarrollado para la materia Aplicaciones Web I.
 
 ## Autor
-Santiago [tu apellido]
+Santiago Ferreyra
 
 ## Descripción
 Farmacia Falco es una tienda online de productos farmacéuticos con tres categorías:
