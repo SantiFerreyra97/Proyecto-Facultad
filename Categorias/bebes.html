@@ -3,20 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>Farmacia Falco - Bebés y Mamás</title>
 </head>
 <body>
 
-    <nav>
-        <a href="../index.html"> INICIO</a>
-        <a href="medicamentos.html">Medicamentos</a>
-        <a href="cuidado-personal.html">Cuidado Personal y Perfumería</a>
-        <a href="bebes.html">Bebés y Mamás</a>
-        <button>Cerrar sesión</button>
-    </nav>
+   <nav class="navbar navbar-expand-lg navbar-dark ">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="../index.html">💊 Farmacia Falco</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="medicamentos.html">Medicamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cuidado-personal.html">Cuidado Personal y Perfumería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="bebes.html">Bebés y Mamás</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-light">Cerrar sesión</button>
+    </div>
+  </div>
+</nav>
 
-    <h1>Farmacia Falco - Bebés y Mamás</h1>
-    <h2>Bebés y Mamás</h2>
+<main class="container mt-4">
+  <h2 class="mb-4">Bebés y Mamás</h2>
 
+  <div class="row g-4">
+
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="/img/pañales.png" 
+             class="card-img-top" alt="Producto">
+        <div class="card-body">
+          <h5 class="card-title">Pañales</h5>
+          <p class="card-text text-muted">Pañales Pampers Talle M x 40</p>
+          <p class="fw-bold" style="color: var(--color-primary);">$1.200</p>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <button class="btn btn-outline-secondary btn-sm">−</button>
+            <span>1</span>
+            <button class="btn btn-outline-secondary btn-sm">+</button>
+          </div>
+          <button class="btn w-100 text-white" 
+                  style="background-color: var(--color-primary);">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
