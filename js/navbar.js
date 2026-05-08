@@ -41,5 +41,7 @@ function generarNavbar(rutaBase = '') {
 
 function cerrarSesion() {
     sessionStorage.removeItem('usuario');
-    window.location.href = 'login.html';
+    // Detecta si estamos en una subcarpeta
+    const enCategoria = window.location.pathname.includes('/categorias/');
+    window.location.href = enCategoria ? '../login.html' : 'login.html';
 }
