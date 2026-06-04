@@ -1,0 +1,134 @@
+{
+  "medicamentos": [
+    {
+      "id": 1,
+      "nombre": "Ibuprofeno Actron 400mg",
+      "descripcion": "Analgésico y antiinflamatorio. Caja x 20 comprimidos.",
+      "precio": 1200,
+      "imagen": "../../img/actron.avif"
+    },
+    {
+      "id": 2,
+      "nombre": "Paracetamol 500mg",
+      "descripcion": "Analgésico y antipirético. Caja x 24 comprimidos.",
+      "precio": 950,
+      "imagen": "../../img/paracetamol_500.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Loratadina 10mg",
+      "descripcion": "Antihistamínico para alergias. Caja x 10 comprimidos.",
+      "precio": 1500,
+      "imagen": "../../img/loratadina.webp"
+    },
+    {
+      "id": 4,
+      "nombre": "Aspirina 500mg",
+      "descripcion": "Analgésico y antipirético. Caja x 10 comprimidos.",
+      "precio": 1500,
+      "imagen": "../../img/aspirina.webp"
+    },
+    {
+      "id": 5,
+      "nombre": "Amoxilina 500mg",
+      "descripcion": "Antibiótico para infecciones. Caja x 10 comprimidos.",
+      "precio": 1500,
+      "imagen": "../../img/amoxilina.webp"
+    },
+    {
+      "id": 6,
+      "nombre": "Frenaler 10mg",
+      "descripcion": "Antihistamínico para alergias. Caja x 10 comprimidos.",
+      "precio": 1500,
+      "imagen": "../../img/frenaler.webp"
+    }
+  ],
+  "cuidado-personal": [
+    {
+      "id": 7,
+      "nombre": "Crema Nivea 200ml",
+      "descripcion": "Crema hidratante para todo tipo de piel.",
+      "precio": 2500,
+      "imagen": "../../img/crema_nivea.webp"
+    },
+    {
+      "id": 8,
+      "nombre": "Shampoo Head & Shoulders",
+      "descripcion": "Shampoo anticaspa. 400ml.",
+      "precio": 1800,
+      "imagen": "../../img/shampoo_h&s.webp"
+    },
+    {
+      "id": 9,
+      "nombre": "Perfume Natura 100ml",
+      "descripcion": "Fragancia floral para mujer.",
+      "precio": 8500,
+      "imagen": "../../img/perfume_natura.webp"
+    },
+    {
+      "id": 10,
+      "nombre": "Aceite de Coco 500ml",
+      "descripcion": "Aceite de coco puro para cuidado del cabello y piel.",
+      "precio": 8500,
+      "imagen": "../../img/aceite_coco.webp"
+    },
+    {
+      "id": 11,
+      "nombre": "Maquinilla de Afeitar Gillette",
+      "descripcion": "Maquinilla de afeitar con cuchillas de acero inoxidable.",
+      "precio": 8500,
+      "imagen": "../../img/maquinilla_gillette.webp"
+    },
+    {
+      "id": 12,
+      "nombre": "Serum facial The Ordinary",
+      "descripcion": "Serum facial con ácido hialurónico para hidratación profunda.",
+      "precio": 8500,
+      "imagen": "../../img/serum_ordinary.webp"
+    }
+  ],
+  "bebes": [
+    {
+      "id": 13,
+      "nombre": "Pañales Pampers Talle M x40",
+      "descripcion": "Pañales ultra absorbentes para bebés de 6 a 10kg.",
+      "precio": 4500,
+      "imagen": "../../img/pañales.png"
+    },
+    {
+      "id": 14,
+      "nombre": "Leche Nan Pro 1 400g",
+      "descripcion": "Leche de fórmula para bebés de 0 a 6 meses.",
+      "precio": 6200,
+      "imagen": "../../img/leche_nanpro.webp"
+    },
+    {
+      "id": 15,
+      "nombre": "Colonia Baby Magic 200ml",
+      "descripcion": "Colonia suave especial para bebés.",
+      "precio": 1900,
+      "imagen": "../../img/colonia_babymagic.webp"
+    },
+    {
+      "id": 16,
+      "nombre": "Shampoo Johnson's Baby 200ml",
+      "descripcion": "Shampoo suave especial para bebés.",
+      "precio": 1900,
+      "imagen": "../../img/shampoo_johnson.webp"
+    },
+    {
+      "id": 17,
+      "nombre": "Toallas Húmedas Huggies x72",
+      "descripcion": "Toallas húmedas suaves para el cuidado de bebés.",
+      "precio": 1900,
+      "imagen": "../../img/toallas_huggies.webp"
+    },
+    {
+      "id": 18,
+      "nombre": "Oleo calcareo para bebés 100ml",
+      "descripcion": "Oleo calcareo suave especial para bebés.",
+      "precio": 1900,
+      "imagen": "../../img/oleo_calcareo.webp"
+    }
+  ]
+}

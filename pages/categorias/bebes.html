@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
     <title>Farmacia Falco - Bebés y Mamás</title>
 </head>
 <body>
@@ -18,52 +18,19 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/navbar.js"></script>
-<script src="../js/cards.js"></script>
+<script src="../../js/navbar.js"></script>
+<script src="../../js/cards.js"></script>
+<script src="../../js/productos.js"></script>
 <script>
-    generarNavbar('../');
+    generarNavbar('../../');
 
-    const productos = [
-        {
-            nombre: "Pañales Pampers Talle M x40",
-            descripcion: "Pañales ultra absorbentes para bebés de 6 a 10kg.",
-            precio: 4500,
-            imagen: "../img/pañales.png"
-        },
-        {
-            nombre: "Leche Nan Pro 1 400g",
-            descripcion: "Leche de fórmula para bebés de 0 a 6 meses.",
-            precio: 6200,
-            imagen: "../img/leche_nanpro.webp"
-        },
-        {
-            nombre: "Colonia Baby Magic 200ml",
-            descripcion: "Colonia suave especial para bebés.",
-            precio: 1900,
-            imagen: "../img/colonia_babymagic.webp"
-        },
-        {
-            nombre: "Shampoo Johnson's Baby 200ml",
-            descripcion: "Shampoo suave especial para bebés.",
-            precio: 1900,
-            imagen: "../img/shampoo_johnson.webp"
-        },
-        {
-            nombre: "Toallas Húmedas Huggies x72",
-            descripcion: "Toallas húmedas suaves para el cuidado de bebés.",
-            precio: 1900,
-            imagen: "../img/toallas_huggies.webp"
-        },
-        {
-            nombre: "Oleo calcareo para bebés 100ml",
-            descripcion: "Oleo calcareo suave especial para bebés.",
-            precio: 1900,
-            imagen: "../img/oleo_calcareo.webp"
-        }
-    ];
+    async function cargarBebes() {
+        const productos = await cargarProductos('bebes');
+        const contenedor = document.getElementById('contenedor-cards');
+        contenedor.innerHTML = productos.map(p => generarCard(p)).join('');
+    }
 
-    const contenedor = document.getElementById('contenedor-cards');
-    contenedor.innerHTML = productos.map(p => generarCard(p)).join('');
+    cargarBebes();
 </script>
 
 </body>

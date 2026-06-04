@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
     <title>Farmacia Falco - Cuidado Personal y Perfumería</title>
 </head>
 <body>
@@ -17,52 +17,19 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/navbar.js"></script>
-<script src="../js/cards.js"></script>
+<script src="../../js/navbar.js"></script>
+<script src="../../js/cards.js"></script>
+<script src="../../js/productos.js"></script>
 <script>
-    generarNavbar('../');
+    generarNavbar('../../');
 
-    const productos = [
-        {
-            nombre: "Crema Nivea 200ml",
-            descripcion: "Crema hidratante para todo tipo de piel.",
-            precio: 2500,
-            imagen: "../img/crema_nivea.webp"
-        },
-        {
-            nombre: "Shampoo Head & Shoulders",
-            descripcion: "Shampoo anticaspa. 400ml.",
-            precio: 1800,
-            imagen: "../img/shampoo_h&s.webp"
-        },
-        {
-            nombre: "Perfume Natura 100ml",
-            descripcion: "Fragancia floral para mujer.",
-            precio: 8500,
-            imagen: "../img/perfume_natura.webp"
-        },
-        {
-            nombre: "Aceite de Coco 500ml",
-            descripcion: "Aceite de coco puro para cuidado del cabello y piel.",
-            precio: 8500,
-            imagen: "../img/aceite_coco.webp"
-        },
-        {
-            nombre: "Maquinilla de Afeitar Gillette",
-            descripcion: "Maquinilla de afeitar con cuchillas de acero inoxidable.",
-            precio: 8500,
-            imagen: "../img/maquinilla_gillette.webp"
-        },
-        {
-            nombre: "serums facial The Ordinary",
-            descripcion: "Serum facial con ácido hialurónico para hidratación profunda.",
-            precio: 8500,
-            imagen: "../img/serum_ordinary.webp"
-        }
-    ];
+    async function cargarCuidadoPersonal() {
+        const productos = await cargarProductos('cuidado-personal');
+        const contenedor = document.getElementById('contenedor-cards');
+        contenedor.innerHTML = productos.map(p => generarCard(p)).join('');
+    }
 
-    const contenedor = document.getElementById('contenedor-cards');
-    contenedor.innerHTML = productos.map(p => generarCard(p)).join('');
+    cargarCuidadoPersonal();
 </script>
 </body>
 </html>

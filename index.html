@@ -20,51 +20,45 @@
     <a href="pages/categorias/medicamentos.html" class="btn btn-light btn-lg">Ver productos</a>
   </div>
 
-  <!-- Categorías -->
-  <h2 class="mb-4">Nuestras categorías</h2>
-  <div class="row g-4">
+  <!-- Medicamentos -->
+  <h2 class="mb-4">Medicamentos Destacados</h2>
+  <div class="row g-4 mb-5" id="contenedor-medicamentos"></div>
 
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <div style="font-size: 3rem;">💊</div>
-          <h5 class="card-title mt-2">Medicamentos</h5>
-          <p class="card-text text-muted">Analgésicos, antigripales, vitaminas y más.</p>
-          <a href="pages/categorias/medicamentos.html" class="btn text-white" 
-             style="background-color: var(--color-primary);">Ver categoría</a>
-        </div>
-      </div>
-    </div>
+  <!-- Cuidado Personal -->
+  <h2 class="mb-4">Cuidado Personal Destacado</h2>
+  <div class="row g-4 mb-5" id="contenedor-cuidado"></div>
 
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <div style="font-size: 3rem;">🧴</div>
-          <h5 class="card-title mt-2">Cuidado Personal y Perfumería</h5>
-          <p class="card-text text-muted">Cremas, higiene, fragancias y más.</p>
-          <a href="pages/categorias/cuidado-personal.html" class="btn text-white"
-             style="background-color: var(--color-primary);">Ver categoría</a>
-        </div>
-      </div>
-    </div>
+  <!-- Bebés -->
+  <h2 class="mb-4">Bebés y Mamás Destacado</h2>
+  <div class="row g-4 mb-5" id="contenedor-bebes"></div>
 
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <div style="font-size: 3rem;">👶</div>
-          <h5 class="card-title mt-2">Bebés y Mamás</h5>
-          <p class="card-text text-muted">Pañales, leche de fórmula, accesorios y más.</p>
-          <a href="pages/categorias/bebes.html" class="btn text-white"
-             style="background-color: var(--color-primary);">Ver categoría</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/navbar.js"></script>
-<script>generarNavbar();</script>
+<script src="js/cards.js"></script>
+<script src="js/productos.js"></script>
+<script>
+    generarNavbar();
+
+    async function cargarHome() {
+        const medicamentos = await cargarProductos('medicamentos');
+        const cuidado = await cargarProductos('cuidado-personal');
+        const bebes = await cargarProductos('bebes');
+
+        // Mostrar solo 3 productos de cada categoría
+        document.getElementById('contenedor-medicamentos').innerHTML = 
+            medicamentos.slice(0, 3).map(p => generarCard(p)).join('');
+        
+        document.getElementById('contenedor-cuidado').innerHTML = 
+            cuidado.slice(0, 3).map(p => generarCard(p)).join('');
+        
+        document.getElementById('contenedor-bebes').innerHTML = 
+            bebes.slice(0, 3).map(p => generarCard(p)).join('');
+    }
+
+    cargarHome();
+</script>
+
 </body>
 </html>

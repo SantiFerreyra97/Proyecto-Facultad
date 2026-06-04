@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Guardamos el usuario en sessionStorage
             sessionStorage.setItem('usuario', email);
             // Redirigimos al home
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }
     });
 });
