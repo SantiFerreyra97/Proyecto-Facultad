@@ -23,7 +23,7 @@
     renderizarCarrito();
 
     function renderizarCarrito() {
-        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const carrito = JSON.parse(localStorage.getItem(claveCarrito())) || [];
         const contenedor = document.getElementById('contenedor-carrito');
 
         if (carrito.length === 0) {
@@ -79,25 +79,27 @@
     }
 
     function eliminarDelCarrito(id) {
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const clave = claveCarrito();
+        let carrito = JSON.parse(localStorage.getItem(clave)) || [];
         carrito = carrito.filter(p => p.id !== id);
-        localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem(clave, JSON.stringify(carrito));
         actualizarContadorCarrito();
         renderizarCarrito();
     }
 
     function cambiarCantidadCarrito(id, cambio) {
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const clave = claveCarrito();
+        let carrito = JSON.parse(localStorage.getItem(clave)) || [];
         const idx = carrito.findIndex(p => p.id === id);
         if (idx < 0) return;
         carrito[idx].cantidad = Math.max(1, carrito[idx].cantidad + cambio);
-        localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem(clave, JSON.stringify(carrito));
         actualizarContadorCarrito();
         renderizarCarrito();
     }
 
     function vaciarCarrito() {
-        localStorage.removeItem('carrito');
+        localStorage.removeItem(claveCarrito());
         actualizarContadorCarrito();
         renderizarCarrito();
     }

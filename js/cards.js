@@ -63,7 +63,8 @@ function agregarAlCarrito(button) {
 
     producto.cantidad = cantidad;
 
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const clave = claveCarrito();
+    let carrito = JSON.parse(localStorage.getItem(clave)) || [];
     const idx = carrito.findIndex(p => p.id === producto.id);
 
     if (idx >= 0) {
@@ -72,7 +73,7 @@ function agregarAlCarrito(button) {
         carrito.push(producto);
     }
 
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem(clave, JSON.stringify(carrito));
     actualizarContadorCarrito();
     mostrarToast(`"${producto.nombre}" agregado al carrito`);
 }
