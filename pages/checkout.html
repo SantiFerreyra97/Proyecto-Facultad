@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Farmacia Falco - Finalizar compra</title>
+</head>
+<body>
+
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-falco"></nav>
+
+<main class="container mt-4 mb-5">
+    <h2 class="mb-4">Finalizar compra</h2>
+
+    <div id="carrito-vacio" class="text-center py-5" style="display:none">
+        <p class="text-muted fs-5">Tu carrito está vacío.</p>
+        <a href="../index.html" class="btn btn-primary mt-2">Ver productos</a>
+    </div>
+
+    <div id="contenido-checkout" class="row g-4">
+        <!-- Formulario de envío -->
+        <div class="col-lg-7">
+            <div class="card shadow-sm p-4">
+                <h5 class="mb-3" style="color: var(--color-primary);">Datos de entrega</h5>
+                <form id="form-checkout" novalidate>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label" for="nombre-completo">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre-completo" required placeholder="Ej: María García">
+                            <div class="invalid-feedback">Ingresá tu nombre completo.</div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="email-checkout">Email</label>
+                            <input type="email" class="form-control" id="email-checkout" required placeholder="tucorreo@email.com">
+                            <div class="invalid-feedback">Ingresá un email válido.</div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="telefono">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" required placeholder="Ej: 3512345678">
+                            <div class="invalid-feedback">Ingresá tu número de teléfono.</div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="direccion">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" required placeholder="Calle y número">
+                            <div class="invalid-feedback">Ingresá tu dirección.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="ciudad">Ciudad</label>
+                            <input type="text" class="form-control" id="ciudad" required placeholder="Ej: Córdoba">
+                            <div class="invalid-feedback">Ingresá tu ciudad.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="provincia">Provincia</label>
+                            <select class="form-select" id="provincia" required>
+                                <option value="">Seleccioná...</option>
+                                <option>Buenos Aires</option>
+                                <option>Córdoba</option>
+                                <option>Santa Fe</option>
+                                <option>Mendoza</option>
+                                <option>Tucumán</option>
+                                <option>Salta</option>
+                                <option>Entre Ríos</option>
+                                <option>Misiones</option>
+                                <option>Chaco</option>
+                                <option>Corrientes</option>
+                                <option>Santiago del Estero</option>
+                                <option>San Juan</option>
+                                <option>Jujuy</option>
+                                <option>Río Negro</option>
+                                <option>Neuquén</option>
+                                <option>Formosa</option>
+                                <option>Chubut</option>
+                                <option>San Luis</option>
+                                <option>Catamarca</option>
+                                <option>La Rioja</option>
+                                <option>La Pampa</option>
+                                <option>Santa Cruz</option>
+                                <option>Tierra del Fuego</option>
+                                <option>Ciudad Autónoma de Buenos Aires</option>
+                            </select>
+                            <div class="invalid-feedback">Seleccioná una provincia.</div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+                    <h5 class="mb-3" style="color: var(--color-primary);">Método de pago</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="form-check border rounded p-3">
+                            <input class="form-check-input" type="radio" name="pago" id="pago-efectivo" value="efectivo" checked>
+                            <label class="form-check-label fw-semibold" for="pago-efectivo">
+                                💵 Efectivo al recibir
+                            </label>
+                        </div>
+                        <div class="form-check border rounded p-3">
+                            <input class="form-check-input" type="radio" name="pago" id="pago-tarjeta" value="tarjeta">
+                            <label class="form-check-label fw-semibold" for="pago-tarjeta">
+                                💳 Tarjeta de crédito/débito
+                            </label>
+                        </div>
+                        <div class="form-check border rounded p-3">
+                            <input class="form-check-input" type="radio" name="pago" id="pago-transferencia" value="transferencia">
+                            <label class="form-check-label fw-semibold" for="pago-transferencia">
+                                🏦 Transferencia bancaria
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn w-100 text-white mt-4 py-2 fs-5"
+                            style="background-color: var(--color-primary);">
+                        Confirmar compra
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Resumen del pedido -->
+        <div class="col-lg-5">
+            <div class="card shadow-sm p-4 sticky-top" style="top: 80px;">
+                <h5 class="mb-3" style="color: var(--color-primary);">Resumen del pedido</h5>
+                <div id="resumen-items"></div>
+                <hr>
+                <div class="d-flex justify-content-between fw-bold fs-5">
+                    <span>Total</span>
+                    <span id="resumen-total" style="color: var(--color-primary);"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Modal de confirmación -->
+<div class="modal fade" id="modal-confirmacion" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+            <div class="mb-3" style="font-size: 4rem;">✅</div>
+            <h4 class="fw-bold mb-2">¡Compra confirmada!</h4>
+            <p class="text-muted mb-1">Gracias por tu pedido.</p>
+            <p class="text-muted">Te enviaremos un email con los detalles a <strong id="modal-email"></strong>.</p>
+            <div class="mt-3">
+                <div class="spinner-border spinner-border-sm text-secondary me-2" role="status"></div>
+                <small class="text-muted">Redirigiendo al inicio...</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/navbar.js"></script>
+<script>
+    generarNavbar('../');
+
+    const clave = claveCarrito();
+    const carrito = JSON.parse(localStorage.getItem(clave)) || [];
+
+    if (carrito.length === 0) {
+        document.getElementById('carrito-vacio').style.display = 'block';
+        document.getElementById('contenido-checkout').style.display = 'none';
+    } else {
+        document.getElementById('contenido-checkout').style.display = '';
+        document.getElementById('carrito-vacio').style.display = 'none';
+        renderizarResumen();
+        preLlenarDatos();
+    }
+
+    function renderizarResumen() {
+        let total = 0;
+        const items = carrito.map(p => {
+            const sub = p.precio * p.cantidad;
+            total += sub;
+            return `
+                <div class="d-flex justify-content-between mb-2 small">
+                    <span>${p.nombre} <span class="text-muted">x${p.cantidad}</span></span>
+                    <span class="fw-semibold">$${sub.toLocaleString('es-AR')}</span>
+                </div>`;
+        }).join('');
+        document.getElementById('resumen-items').innerHTML = items;
+        document.getElementById('resumen-total').textContent = '$' + total.toLocaleString('es-AR');
+    }
+
+    function preLlenarDatos() {
+        const usuario = JSON.parse(sessionStorage.getItem('usuario') || 'null');
+        if (!usuario) return;
+        if (usuario.email) document.getElementById('email-checkout').value = usuario.email;
+        if (usuario.nombre) {
+            const nombreCompleto = [usuario.nombre, usuario.apellido].filter(Boolean).join(' ');
+            document.getElementById('nombre-completo').value = nombreCompleto;
+        }
+    }
+
+    document.getElementById('form-checkout').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!this.checkValidity()) {
+            this.classList.add('was-validated');
+            return;
+        }
+
+        const email = document.getElementById('email-checkout').value;
+        document.getElementById('modal-email').textContent = email;
+
+        const modal = new bootstrap.Modal(document.getElementById('modal-confirmacion'));
+        modal.show();
+
+        localStorage.removeItem(clave);
+        actualizarContadorCarrito();
+
+        setTimeout(() => {
+            window.location.href = '../index.html';
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>
