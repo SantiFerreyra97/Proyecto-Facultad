@@ -15,7 +15,7 @@ La tienda permite explorar productos en tres categorías, gestionar un carrito d
 
 Enlace público:  https://farmaciafalco.vercel.app/
 
-Enlace público del video explicativo: 
+Enlace público del video explicativo: https://youtu.be/2GT93gDHWCg
 
 ---
 
